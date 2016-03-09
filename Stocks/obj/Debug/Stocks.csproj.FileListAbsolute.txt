@@ -38,3 +38,6 @@ C:\Users\Alex\Documents\Visual Studio 2012\Projects\Stocks\Stocks\bin\Debug\ro\X
 C:\Users\Alex\Documents\Visual Studio 2012\Projects\Stocks\Stocks\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Alex\Documents\Visual Studio 2012\Projects\Stocks\Stocks\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Alex\Documents\Visual Studio 2012\Projects\Stocks\Stocks\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Alex\Desktop\Stocks\Stocks\bin\Debug\Stocks.exe.config
+C:\Users\Alex\Desktop\Stocks\Stocks\obj\Debug\Stocks.exe
+C:\Users\Alex\Desktop\Stocks\Stocks\obj\Debug\Stocks.pdb

@@ -43,6 +43,7 @@ namespace Stocks
             imgChart.Stretch = Stretch.Fill;
         }
 
+		//TODO: REFACTOR
         private static void DataPropertyChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
             Chart me = (Chart)o;
