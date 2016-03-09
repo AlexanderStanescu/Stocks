@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="Stocks.Regular"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Stocks"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:s="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                    <CheckBox Command="{Binding ChkCmd}" VerticalAlignment="Center" />
+                    <Label Foreground="Red" Content="Lagging Span" FontSize="14" />
+                    <CheckBox Command="{Binding ChkCmd}" VerticalAlignment="Center" />
+                    <Label Foreground="Purple" Content="Conversion Line" FontSize="14"  />
+                    <CheckBox Command="{Binding ChkCmd}" VerticalAlignment="Center" />
+                    <Label Foreground="Blue" Content="Base Line" FontSize="14"  />
+                    <CheckBox Command="{Binding ChkCmd}" VerticalAlignment="Center" />
+                    <Label Foreground="Orange" Content="Leading Span A" FontSize="14"  />
+                    <CheckBox Command="{Binding ChkCmd}" VerticalAlignment="Center" />
+                    <Label Foreground="Black" Content="Leading Span B" FontSize="14"  />
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right" Margin="2, 2, 2, 2">
+                    <Label Content="Begin Date:" />
+                    <TextBox Text="{Binding BeginDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="20">                       
+                        <TextBox.Style>
+                            <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                <Style.Resources>
+                                    <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                        <VisualBrush.Visual>
+                                            <Label Content="yyyy-mm-dd" Foreground="DarkGray" />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Style.Resources>
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <Label Content="End Date:" />
+                    <TextBox Text="{Binding EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="20">
+                        <TextBox.Style>
+                            <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                <Style.Resources>
+                                    <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                        <VisualBrush.Visual>
+                                            <Label Content="yyyy-mm-dd" Foreground="DarkGray" />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Style.Resources>
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <Label Content="Search: " />
+                    <TextBox Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="20">
+                        <TextBox.Style>
+                            <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                <Style.Resources>
+                                    <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                        <VisualBrush.Visual>
+                                            <Label Content="Search" Foreground="DarkGray" />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Style.Resources>
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="IsKeyboardFocused" Value="True">
+                                        <Setter Property="Background" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <Button Content="Advanced Search" Command="{Binding DataContext.ChangeToAdvanced, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}"/>
+                </StackPanel>
+            </DockPanel>
+            <local:Chart DockPanel.Dock="Bottom" Data="{Binding ChartPoints}" Width="1200" Height="600" />
+        </DockPanel>
+    </Grid>
+</UserControl>

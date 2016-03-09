@@ -1,0 +1,17 @@
+﻿<Window x:Class="Stocks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Stocks"
+        Title="Stocks" Width="1209" Height="659" MinWidth="400" MinHeight="300">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type local:RegularVM}">
+            <local:Regular />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:AdvancedVM}">
+            <local:Advanced />
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <ContentControl Grid.Row="1" Content="{Binding CurrentVM}" />
+    </Grid>
+</Window>

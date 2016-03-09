@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="Stocks.Advanced"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Stocks"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Right" Margin="2" Width="100" Height="30">
+                <Button Content="Basic Search" Command="{Binding DataContext.ChangeToAdvanced, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                <Label Content="Price" />
+                <ComboBox>
+                    <ComboBoxItem>Item 1</ComboBoxItem>
+                    <ComboBoxItem>Item 2</ComboBoxItem>
+                    <ComboBoxItem>Item 3</ComboBoxItem>
+                    <ComboBoxItem>Item 4</ComboBoxItem>
+                    <ComboBoxItem>Item 5</ComboBoxItem>
+                </ComboBox>
+                <Label Content="SMA20" />
+                <ComboBox>
+                    <ComboBoxItem>Item 1</ComboBoxItem>
+                    <ComboBoxItem>Item 2</ComboBoxItem>
+                    <ComboBoxItem>Item 3</ComboBoxItem>
+                    <ComboBoxItem>Item 4</ComboBoxItem>
+                    <ComboBoxItem>Item 5</ComboBoxItem>
+                </ComboBox>
+                <Label Content="SMA50" />
+                <ComboBox>
+                    <ComboBoxItem>Item 1</ComboBoxItem>
+                    <ComboBoxItem>Item 2</ComboBoxItem>
+                    <ComboBoxItem>Item 3</ComboBoxItem>
+                    <ComboBoxItem>Item 4</ComboBoxItem>
+                    <ComboBoxItem>Item 5</ComboBoxItem>
+                </ComboBox>
+                <Label Content="SMA100" />
+                <ComboBox>
+                    <ComboBoxItem>Item 1</ComboBoxItem>
+                    <ComboBoxItem>Item 2</ComboBoxItem>
+                    <ComboBoxItem>Item 3</ComboBoxItem>
+                    <ComboBoxItem>Item 4</ComboBoxItem>
+                    <ComboBoxItem>Item 5</ComboBoxItem>
+                </ComboBox>
+                <Label Content="SMA200" />
+                <ComboBox>
+                    <ComboBoxItem>Item 1</ComboBoxItem>
+                    <ComboBoxItem>Item 2</ComboBoxItem>
+                    <ComboBoxItem>Item 3</ComboBoxItem>
+                    <ComboBoxItem>Item 4</ComboBoxItem>
+                    <ComboBoxItem>Item 5</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </DockPanel>
+        <UniformGrid Grid.Row="1">
+            <!--<local:Chart DockPanel.Dock="Bottom" Data="w}" Width="1200" Height="600" />
+            <local:Chart DockPanel.Dock="Bottom" Data="{Binding ChartPoints}" Width="1200" Height="600" />
+            <local:Chart DockPanel.Dock="Bottom" Data="{Binding ChartPoints}" Width="1200" Height="600" />
+            <local:Chart DockPanel.Dock="Bottom" Data="{Binding ChartPoints}" Width="1200" Height="600" />
+            <local:Chart DockPanel.Dock="Bottom" Data="{Binding ChartPoints}" Width="1200" Height="600" />
+            <local:Chart DockPanel.Dock="Bottom" Data="{Binding ChartPoints}" Width="1200" Height="600" />
+            <local:Chart DockPanel.Dock="Bottom" Data="{Binding ChartPoints}" Width="1200" Height="600" />
+            <local:Chart DockPanel.Dock="Bottom" Data="{Binding ChartPoints}" Width="1200" Height="600" />
+            <local:Chart DockPanel.Dock="Bottom" Data="{Binding ChartPoints}" Width="1200" Height="600" />-->
+        </UniformGrid>
+    </Grid>
+</UserControl>
